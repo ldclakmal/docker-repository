@@ -1,0 +1,7 @@
+# IDE files
+target/
+.idea/
+*.iml
+
+# CUSTOM files
+*.zip
