@@ -6,7 +6,7 @@
 
 (Since this is a proxy, there should be a backend HTTP service already started on port `9191` with request path `/`. i.e. `$ curl -v http://localhost:9191` should be up and running)
 
-**Docker Hub URL:** https://hub.docker.com/r/ldclakmal/envoy
+> Docker Hub URL:  https://hub.docker.com/r/ldclakmal/envoy
 
 #### Resources:
 1. https://www.envoyproxy.io/docs/envoy/latest/start/start
