@@ -1,4 +1,4 @@
-## MSF4J Docker Image
+## Simple MSF4J Microservice - Docker Image
 
 - Build - `$ docker build -t msf4j-sample .`
 - Run - `$ docker run -d -p 9090:8080 msf4j-sample`

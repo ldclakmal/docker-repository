@@ -1,4 +1,4 @@
-## Envoy HTTP Simple Proxy - Docker Image
+## Envoy HTTP Proxy - Docker Image
 
 - Build - `$ docker build -t envoy .`
 - Run - `$ docker run -d --network="host" --name envoy -p 9901:9901 -p 9090:9090 envoy`

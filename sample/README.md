@@ -1,4 +1,6 @@
-## Sample Docker Image
+## Getting Started - Docker Image
+
+This docker image is an simple Python server.
 
 - Build - `$ docker build -t get-started .`
 - Run - `$ docker run -d -p 9090:80 get-started`
