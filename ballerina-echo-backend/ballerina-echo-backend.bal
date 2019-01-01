@@ -8,12 +8,12 @@ service hello on listenerEP {
 
     resource function sayHello(http:Caller outboundEP, http:Request clientRequest) {
         http:Response res = new;
-        var payload = clientRequest.getJsonPayload();
-        if (payload is json) {
-            res.setPayload(untaint payload);
+        var entity = clientRequest.getEntity();
+        if (entity is mime:Entity) {
+            res.setEntity(entity);
         } else {
-            string errMsg = "Received payload is not json compatible";
-            log:printError(errMsg, err = payload);
+            string errMsg = "An error occurred while retrieving the entity from the backend";
+            log:printError(errMsg, err = entity);
             res.setPayload({ message: errMsg });
         }
         res.setHeader(http:CONTENT_TYPE, mime:APPLICATION_JSON);
