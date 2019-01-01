@@ -2,6 +2,3 @@
 target/
 .idea/
 *.iml
-
-# CUSTOM files
-*.zip
