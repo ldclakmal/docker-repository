@@ -9,3 +9,4 @@ Sample docker images for different use cases.
 3. [Ballerina Echo Backend](./ballerina-echo-backend)
 4. [Ballerina HTTP Passthrough Service](./ballerina-http-passthrough)
 5. [Envoy HTTP Proxy](./envoy)
+6. [GO Echo Backend](./go-echo-backend)
