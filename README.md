@@ -10,3 +10,4 @@ Sample docker images for different use cases.
 4. [Ballerina HTTP Passthrough Service](./ballerina-http-passthrough)
 5. [Envoy HTTP Proxy](./envoy)
 6. [GO Echo Backend](./go-echo-backend)
+7. [WSO2 Transport - HTTP Passthrough](./wso2-transport-http-passthrough)
