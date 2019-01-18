@@ -1,4 +1,4 @@
-FROM golang:1.8
+FROM golang:1.11.4
 
 WORKDIR /go/src/app
 COPY . .
@@ -6,4 +6,6 @@ COPY . .
 RUN go get -d -v ./...
 RUN go install -v ./...
 
-CMD go run go_echo_backend.go
+ENV MAXSTREAM = 100
+
+CMD go run go_echo_backend.go -version $VERSION -maxstream $MAXSTREAM
