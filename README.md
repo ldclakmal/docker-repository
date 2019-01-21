@@ -11,3 +11,4 @@ Sample docker images for different use cases.
 5. [Envoy HTTP Proxy](./envoy)
 6. [GO Echo Backend](./go-echo-backend)
 7. [WSO2 Transport - HTTP Passthrough](./wso2-transport-http-passthrough)
+7. [WSO2 Transport - HTTP Echo Backend](./wso2-transport-echo-backend)
