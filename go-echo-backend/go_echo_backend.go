@@ -1,13 +1,3 @@
-// How to run the program
-//
-// Run as HTTP/1.1 echo backend
-// $ go run backend.go
-// Test - $ curl -k https://localhost:9191/hello/sayHello -d "Hello"
-//
-// Run as HTTP/2 echo backend
-// $ go run backend.go -version 2 -maxstream 1000
-// Test - $ curl --http2 -k https://localhost:9191/hello/sayHello -d "Hello"
-
 package main
 
 import (
@@ -22,8 +12,8 @@ import (
 // By default version flag is set to 1 (refers to HTTP/1.1)
 var httpVersion = flag.Int("version", 1, "HTTP version")
 
-// By default the number of maximum concurrent streams per connection is set as 100
-var maxConcurrentStreams = flag.Int("maxstream", 100, "HTTP/2 max concurrent streams")
+// By default the number of maximum concurrent streams per connection is set as 1000
+var maxConcurrentStreams = flag.Int("maxstream", 1000, "HTTP/2 max concurrent streams")
 
 func main() {
 	flag.Parse()
