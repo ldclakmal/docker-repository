@@ -65,7 +65,7 @@ func main() {
 }
 
 func reverseProxy(w http.ResponseWriter, req *http.Request) {
-	log.Printf("Request connection: %s, path: %s", req.Proto, req.URL.Path[1:])
+	//log.Printf("Request connection: %s, path: %s", req.Proto, req.URL.Path[1:])
 	backendReq, _ := http.NewRequest(req.Method, "https://localhost:9191/hello/sayHello", req.Body)
 	resp, _ := client.Do(backendReq)
 	body, _ := ioutil.ReadAll(resp.Body)
