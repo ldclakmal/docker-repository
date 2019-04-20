@@ -12,6 +12,9 @@ import (
 // By default version flag is set to 1 (refers to HTTP/1.1)
 var httpVersion = flag.Int("version", 1, "HTTP version")
 
+var certFile = flag.String("certfile", "", "SSL certificate file")
+var keyFile = flag.String("keyfile", "", "SSL certificate key file")
+
 // By default the number of maximum concurrent streams per connection is set as 1000
 var maxConcurrentStreams = flag.Int("maxstream", 1000, "HTTP/2 max concurrent streams")
 
@@ -20,16 +23,17 @@ func main() {
 
 	switch *httpVersion {
 	case 1:
+		log.Printf("Go Backend: { HTTPVersion = 1 }; serving on https://localhost:%s%s", 9191, "/hello/sayHello")
 		httpBackend()
 	case 2:
+		log.Printf("Go Backend: { HTTPVersion = 2, MaxStreams = %v }; serving on https://localhost:%s%s", *maxConcurrentStreams, 9191, "/hello/sayHello")
 		http2Backend()
 	}
 }
 
 func httpBackend() {
 	http.HandleFunc("/hello/sayHello", echoPayload)
-	log.Printf("Go Backend: { HTTPVersion = 1 }; serving on https://localhost:9191/hello/sayHello")
-	log.Fatal(http.ListenAndServeTLS(":9191", "./cert/server.crt", "./cert/server.key", nil))
+	log.Fatal(http.ListenAndServeTLS(":9191", *certFile, *keyFile, nil))
 }
 
 func http2Backend() {
@@ -41,12 +45,11 @@ func http2Backend() {
 	}
 	_ = http2.ConfigureServer(&httpServer, &http2Server)
 	http.HandleFunc("/hello/sayHello", echoPayload)
-	log.Printf("Go Backend: { HTTPVersion = 2, MaxStreams = %v }; serving on https://localhost:9191/hello/sayHello", *maxConcurrentStreams)
-	log.Fatal(httpServer.ListenAndServeTLS("./cert/server.crt", "./cert/server.key"))
+	log.Fatal(httpServer.ListenAndServeTLS(*certFile, *keyFile))
 }
 
 func echoPayload(w http.ResponseWriter, req *http.Request) {
-	//log.Printf("Request connection: %s, path: %s", req.Proto, req.URL.Path[1:])
+	log.Printf("Request connection: %s, path: %s", req.Proto, req.URL.Path[1:])
 	defer req.Body.Close()
 	contents, err := ioutil.ReadAll(req.Body)
 	if err != nil {
