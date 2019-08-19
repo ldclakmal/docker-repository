@@ -8,4 +8,4 @@ RUN go install -v ./...
 
 ENV MAXSTREAM=1000
 
-CMD go run go_echo_backend.go -version $VERSION -maxstream $MAXSTREAM -certfile $CERTFILE -keyfile $KEYFILE
+CMD go run go_echo_backend.go -version $VERSION -maxstream $MAXSTREAM

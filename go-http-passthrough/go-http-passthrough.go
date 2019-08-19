@@ -17,9 +17,6 @@ var backendhost = flag.String("host", "localhost", "Server host")
 var backendport = flag.String("port", "9191", "Server port")
 var backendpath = flag.String("path", "/hello/sayHello", "Server Request path")
 
-var certFile = flag.String("certfile", "", "SSL certificate file")
-var keyFile = flag.String("keyfile", "", "SSL certificate key file")
-
 // By default the number of maximum concurrent streams per connection is set as 1000
 var maxConcurrentStreams = flag.Int("maxstream", 1000, "HTTP/2 max concurrent streams")
 
@@ -30,7 +27,7 @@ func main() {
 
 	// Create a pool with the server certificate since it is not signed
 	// by a known CA
-	caCert, err := ioutil.ReadFile(*certFile)
+	caCert, err := ioutil.ReadFile("./cert/server.crt")
 	if err != nil {
 		log.Fatalf("Reading server certificate: %s", err)
 	}
@@ -52,8 +49,8 @@ func main() {
 			Addr: ":9090",
 		}
 		http.HandleFunc("/passthrough", reverseProxy)
-		log.Printf("Go Pssthrough: { HTTPVersion = 1 }; serving on https://localhost:9090/passthrough")
-		log.Fatal(httpServer.ListenAndServeTLS(*certFile, *keyFile))
+		log.Printf("Go Passthrough: { HTTPVersion = 1 }; serving on https://localhost:9090/passthrough")
+		log.Fatal(httpServer.ListenAndServeTLS("./cert/server.crt", "./cert/server.key"))
 	case 2:
 		client.Transport = &http2.Transport{
 			TLSClientConfig: tlsConfig,
@@ -66,8 +63,8 @@ func main() {
 		}
 		_ = http2.ConfigureServer(&httpServer, &http2Server)
 		http.HandleFunc("/passthrough", reverseProxy)
-		log.Printf("Go Pssthrough: { HTTPVersion = 2, MaxStreams = %v }; serving on https://localhost:9090/passthrough", *maxConcurrentStreams)
-		log.Fatal(httpServer.ListenAndServeTLS(*certFile, *keyFile))
+		log.Printf("Go Passthrough: { HTTPVersion = 2, MaxStreams = %v }; serving on https://localhost:9090/passthrough", *maxConcurrentStreams)
+		log.Fatal(httpServer.ListenAndServeTLS("./cert/server.crt", "./cert/server.key"))
 	}
 }
 

@@ -12,9 +12,6 @@ import (
 // By default version flag is set to 1 (refers to HTTP/1.1)
 var httpVersion = flag.Int("version", 1, "HTTP version")
 
-var certFile = flag.String("certfile", "", "SSL certificate file")
-var keyFile = flag.String("keyfile", "", "SSL certificate key file")
-
 // By default the number of maximum concurrent streams per connection is set as 1000
 var maxConcurrentStreams = flag.Int("maxstream", 1000, "HTTP/2 max concurrent streams")
 
@@ -33,7 +30,7 @@ func main() {
 
 func httpBackend() {
 	http.HandleFunc("/hello/sayHello", echoPayload)
-	log.Fatal(http.ListenAndServeTLS(":9191", *certFile, *keyFile, nil))
+	log.Fatal(http.ListenAndServeTLS(":9191", "./cert/server.crt", "./cert/server.key", nil))
 }
 
 func http2Backend() {
@@ -45,7 +42,7 @@ func http2Backend() {
 	}
 	_ = http2.ConfigureServer(&httpServer, &http2Server)
 	http.HandleFunc("/hello/sayHello", echoPayload)
-	log.Fatal(httpServer.ListenAndServeTLS(*certFile, *keyFile))
+	log.Fatal(httpServer.ListenAndServeTLS("./cert/server.crt", "./cert/server.key"))
 }
 
 func echoPayload(w http.ResponseWriter, req *http.Request) {
