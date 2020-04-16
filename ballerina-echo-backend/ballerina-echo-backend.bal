@@ -17,6 +17,6 @@ service hello on listenerEP {
             res.setPayload({ message: errMsg });
         }
         res.setHeader(http:CONTENT_TYPE, mime:APPLICATION_JSON);
-        _ = outboundEP->respond(res);
+        checkpanic outboundEP->respond(res);
     }
 }
