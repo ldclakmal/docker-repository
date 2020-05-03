@@ -2,3 +2,5 @@
 target/
 .idea/
 *.iml
+
+wso2is-sts/wso2is-**/
