@@ -1,14 +1,30 @@
-# Docker Samples
+# Docker Images
 
-> Docker Hub URL: https://hub.docker.com/u/ldclakmal
+![Docker Logo](https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png)
 
-Sample docker images for different use cases.
+This is a collection of Dockerfiles for images that can be used to different integration scenarios for microservices. The following images are published on DockerHub at https://hub.docker.com/u/ldclakmal.
 
-1. [Getting Started](./sample)
-2. [Simple MSF4J Microservice](./msf4j)
-3. [Ballerina Echo Backend](./ballerina-echo-backend)
-4. [Ballerina HTTP Passthrough Service](./ballerina-http-passthrough)
-5. [Envoy HTTP Proxy](./envoy)
-6. [GO Echo Backend](./go-echo-backend)
-7. [WSO2 Transport - HTTP Passthrough](./wso2-transport-http-passthrough)
-7. [WSO2 Transport - HTTP Echo Backend](./wso2-transport-echo-backend)
+### Netty - https://netty.io
+
+- Netty Echo Backend - [ldclakmal/netty-echo-backend](https://hub.docker.com/r/ldclakmal/netty-echo-backend) ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/netty-echo-backend)
+
+### WSO2 - https://wso2.com
+
+- WSO2 IS STS - [ldclakmal/wso2is-sts](https://hub.docker.com/r/ldclakmal/wso2is-sts) ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/wso2is-sts)
+
+### Ballerina - https://ballerina.io
+
+- Ballerina Echo Backend - [ldclakmal/ballerina-echo-backend](https://hub.docker.com/r/ldclakmal/ballerina-echo-backend) ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/ballerina-echo-backend)
+
+- Ballerina HTTP Passthrough Service - [ldclakmal/ballerina-http-passthrough](https://hub.docker.com/r/ldclakmal/ballerina-http-passthrough) ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/ballerina-http-passthrough)
+
+### Go - https://golang.org
+
+- GO Echo Backend - [ldclakmal/go-echo-backend](https://hub.docker.com/r/ldclakmal/go-echo-backend) ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/go-echo-backend)
+
+- Go HTTP Passthrough Service - [ldclakmal/go-http-passthrough](https://hub.docker.com/r/ldclakmal/go-http-passthrough) ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/go-http-passthrough)
+
+### Envoy - https://www.envoyproxy.io
+
+- Envoy HTTP Proxy - [ldclakmal/envoy](https://hub.docker.com/r/ldclakmal/envoy) ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/envoy)
+
