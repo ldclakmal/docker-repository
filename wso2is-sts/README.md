@@ -2,7 +2,11 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/wso2is-sts)
 
-> Docker Hub URL: https://hub.docker.com/r/ldclakmal/wso2is-sts
+WSO2 IS Version: 5.7.0
+
+Java Version: 8
+
+Docker Hub URL: https://hub.docker.com/r/ldclakmal/wso2is-sts
 
 ---
 

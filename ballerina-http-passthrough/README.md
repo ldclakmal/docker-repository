@@ -2,7 +2,9 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/ballerina-http-passthrough)
 
-> Docker Hub URL: https://hub.docker.com/r/ldclakmal/ballerina-http-passthrough
+Ballerina Version: 1.2.0
+
+Docker Hub URL: https://hub.docker.com/r/ldclakmal/ballerina-http-passthrough
 
 ---
 

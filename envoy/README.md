@@ -2,7 +2,9 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/envoy)
 
-> Docker Hub URL:  https://hub.docker.com/r/ldclakmal/envoy
+Envoy Version: latest
+
+Docker Hub URL:  https://hub.docker.com/r/ldclakmal/envoy
 
 ---
 

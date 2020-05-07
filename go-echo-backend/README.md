@@ -2,7 +2,9 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/go-echo-backend)
 
-> Docker Hub URL: https://hub.docker.com/r/ldclakmal/go-echo-backend
+Go Version: 1.14.2
+
+Docker Hub URL: https://hub.docker.com/r/ldclakmal/go-echo-backend
 
 ---
 

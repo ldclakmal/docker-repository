@@ -2,7 +2,9 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/go-http-passthrough)
 
-> Docker Hub URL: https://hub.docker.com/r/ldclakmal/go-http-passthrough
+Go Version: 1.14.2
+
+Docker Hub URL: https://hub.docker.com/r/ldclakmal/go-http-passthrough
 
 ---
 

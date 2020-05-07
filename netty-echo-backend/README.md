@@ -2,7 +2,11 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/netty-echo-backend)
 
-> Docker Hub URL: https://hub.docker.com/r/ldclakmal/netty-echo-backend
+Netty Version: 4.1.47.Final
+
+Java Version: 8
+
+Docker Hub URL: https://hub.docker.com/r/ldclakmal/netty-echo-backend
 
 ---
 

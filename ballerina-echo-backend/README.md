@@ -2,7 +2,9 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/ballerina-echo-backend)
 
-> Docker Hub URL: https://hub.docker.com/r/ldclakmal/ballerina-echo-backend
+Ballerina Version: 1.2.0
+
+Docker Hub URL: https://hub.docker.com/r/ldclakmal/ballerina-echo-backend
 
 ---
 
