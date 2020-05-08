@@ -1,4 +1,5 @@
 FROM golang:1.14.2
+LABEL maintainer="ldclakmal@gmail.com"
 
 WORKDIR /go/src/app
 COPY . .

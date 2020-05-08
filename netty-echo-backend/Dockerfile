@@ -1,4 +1,5 @@
 FROM maven:3.6.3-jdk-8
+LABEL maintainer="ldclakmal@gmail.com"
 WORKDIR /
 COPY ./cert/keystore.p12 /etc/netty/cert/keystore.p12
 RUN git clone https://github.com/ldclakmal/netty-http-transport-sample.git
