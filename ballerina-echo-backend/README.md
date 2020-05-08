@@ -2,15 +2,7 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/ballerina-echo-backend)
 
-Ballerina Version: 1.2.0
+A Docker image of Ballerina service which echo back the request payload. Supports both **HTTP/1.1** and **HTTP/2**. Also, supports any type of request payload such as text, json, xml etc.
 
-Docker Hub URL: https://hub.docker.com/r/ldclakmal/ballerina-echo-backend
-
----
-
-- Build - `$ docker build -t ballerina-echo-backend .`
-- Run - `$ docker run -d -p 9191:9191 ballerina-echo-backend`
-- Test
-    - HTTP/1.1 - `$ curl -v http://localhost:9191/hello/sayHello -d "Hello Ballerina"`
-    - HTTP/2.0 - `$ curl --http2 -v http://localhost:9191/hello/sayHello -d "Hello Ballerina"`
-
+Visit Docker Hub repository for more information on how to run and test the image.
+https://hub.docker.com/r/ldclakmal/ballerina-echo-backend

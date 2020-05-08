@@ -2,22 +2,7 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/ldclakmal/netty-echo-backend)
 
-Netty Version: 4.1.47.Final
+A Docker image of Netty HTTP service which echo back the request payload. Supports both HTTP/1.1 and HTTP/2 versions and SSL. Also, supports any type of request payload such as text, json, xml etc.
 
-Java Version: 8
-
-Docker Hub URL: https://hub.docker.com/r/ldclakmal/netty-echo-backend
-
----
-
-- Build - `$ docker build -t netty-echo-backend .`
-- Run
-    - h1c -`$ docker run -d -p 8688:8688 netty-echo-backend`
-    - h1 - `$ docker run -d -p 8688:8688 -e "SSL=true" netty-echo-backend`
-    - h2c - `$ docker run -d -p 8688:8688 -e "HTTP2=true" netty-echo-backend`
-    - h2 - `$ docker run -d -p 8688:8688 -e "HTTP2=true" -e "SSL=true" netty-echo-backend`
-- Test
-    - h1c - `$ curl -v http://localhost:8688 -d "Hello Netty!"`
-    - h1 - `$ curl -kv https://localhost:8688 -d "Hello Netty!"`
-    - h2c - `$ curl -v --http2 http://localhost:8688 -d "Hello Netty!"`
-    - h2 - `$ curl -kv --http2 https://localhost:8688 -d "Hello Netty!"`
+Visit Docker Hub repository for more information on how to run and test the image.
+https://hub.docker.com/r/ldclakmal/netty-echo-backend
