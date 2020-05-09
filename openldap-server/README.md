@@ -16,6 +16,8 @@ Now, execute following command to start the Docker container.
 $ docker-compose up
 ```
 
+**NOTE:** Since, we have named the container as `openldap-server` in `docker-compose.yml` file the following commands will refer that name.
+
 Execute following commands with `ldapsearch` to query the DIT and lookup entries.
 ```bash
 $ docker exec openldap-server ldapsearch -x -H ldap://localhost -D "cn=admin,dc=avix,dc=lk" -w avix123 -b "dc=avix,dc=lk"
@@ -23,13 +25,30 @@ $ docker exec openldap-server ldapsearch -x -H ldap://localhost -D "cn=admin,dc=
 $ docker exec openldap-server ldapsearch -x -H ldap://localhost -D "cn=admin,dc=avix,dc=lk" -w avix123 -b "dc=avix,dc=lk" -LLL "(uid=ldclakmal)"
 ```
 
+Use this command to peek inside the Docker container.
+```bash
+$ docker exec -it openldap-server bash
+```
+
 Use this command to verify the `bootstrap.ldif` is properly installed.
 ```bash
 $ docker exec openldap-server ldapadd -x -H ldap://localhost -D "cn=admin,dc=avix,dc=lk" -w avix123 -f /container/service/slapd/assets/config/bootstrap/ldif/custom/bootstrap.ldif
 ```
 
+---
+**NOTE:** Experimental stage.
+
+Alternative way to start the container without `docker-compose.yml`.
+```bash
+docker run -p 389:389 -p 636:636 --name openldap-server --env LDAP_ORGANISATION="AVIX" \
+    --env LDAP_DOMAIN="avix.lk" --env LDAP_ADMIN_PASSWORD="avix123" --env LDAP_BASE_DN="dc=avix,dc=lk" \
+    --volume ./bootstrap.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/bootstrap.ldif \
+    osixia/openldap:1.3.0 --copy-service
+```
+
+---
 # References
-https://github.com/osixia/docker-openldap
+https://github.com/osixia/docker-openldap``
 https://ldap.com/basic-ldap-concepts/
 https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system
 https://www.digitalocean.com/community/tutorials/how-to-manage-and-use-ldap-servers-with-openldap-utilities
