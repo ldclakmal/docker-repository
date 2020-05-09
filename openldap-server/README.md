@@ -23,6 +23,7 @@ Execute following commands with `ldapsearch` to query the DIT and lookup entries
 $ docker exec openldap-server ldapsearch -x -H ldap://localhost -D "cn=admin,dc=avix,dc=lk" -w avix123 -b "dc=avix,dc=lk"
 $ docker exec openldap-server ldapsearch -x -H ldap://localhost -D "cn=admin,dc=avix,dc=lk" -w avix123 -b "dc=avix,dc=lk" -s one -LLL dn
 $ docker exec openldap-server ldapsearch -x -H ldap://localhost -D "cn=admin,dc=avix,dc=lk" -w avix123 -b "dc=avix,dc=lk" -LLL "(uid=ldclakmal)"
+$ docker exec openldap-server ldapsearch -x -H ldap://localhost -D "cn=admin,dc=avix,dc=lk" -w avix123 -b "ou=Groups,dc=avix,dc=lk" -LLL "(&(objectClass=groupOfNames)(member=uid=johndoe,ou=users,dc=avix,dc=lk))"
 ```
 
 Use this command to peek inside the Docker container.
