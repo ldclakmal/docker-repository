@@ -13,4 +13,4 @@ services:
             - 636:636
         volumes:
             - ./bootstrap.ldif:/container/service/slapd/assets/config/bootstrap/ldif/custom/bootstrap.ldif
-        command: "--copy-service"
+        command: --copy-service
