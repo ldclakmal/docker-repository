@@ -1,4 +1,4 @@
-FROM ballerina/ballerina:swan-lake-alpha5
+FROM ballerina/ballerina:swan-lake-beta1
 LABEL maintainer="ldclakmal@gmail.com"
 ADD https://raw.githubusercontent.com/ldclakmal/ballerina-security/master/scenarios/sts/cert/private.key /home/ballerina/cert/private.key
 ADD https://raw.githubusercontent.com/ldclakmal/ballerina-security/master/scenarios/sts/cert/public.crt /home/ballerina/cert/public.crt
