@@ -1,4 +1,4 @@
-FROM ballerina/ballerina:swan-lake-beta1
+FROM ballerina/ballerina:swan-lake-beta2
 LABEL maintainer="ldclakmal@gmail.com"
 ADD https://raw.githubusercontent.com/ldclakmal/ballerina-security/master/scenarios/sts/cert/private.key /home/ballerina/cert/private.key
 ADD https://raw.githubusercontent.com/ldclakmal/ballerina-security/master/scenarios/sts/cert/public.crt /home/ballerina/cert/public.crt
@@ -9,4 +9,5 @@ RUN chmod 766 /home/ballerina/cert/private.key
 RUN chmod 766 /home/ballerina/cert/public.crt
 USER ballerina
 EXPOSE 9445
-CMD bal run ballerina-sts.bal
+RUN bal build ballerina-sts.bal
+CMD bal run ballerina-sts.jar
