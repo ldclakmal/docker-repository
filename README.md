@@ -1,6 +1,6 @@
 # Docker Repository - [ldclakmal/**](https://hub.docker.com/u/ldclakmal)
 
-![Docker Logo](https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png)
+![Docker Logo](https://www.docker.com/wp-content/uploads/2022/03/horizontal-logo-monochromatic-white.png)
 
 This is a collection of Dockerfiles for images that can be used to different integration scenarios for microservices. All the images are published on DockerHub at https://hub.docker.com/u/ldclakmal.
 
